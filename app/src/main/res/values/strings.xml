@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">My Application</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_hunter_screen">HunterScreen</string>
+    <string name="title_activity_tree_stand_screen">TreeStandScreen</string>
+    <string name="title_activity_add_harvested_deer_screen">AddHarvestedDeerScreen</string>
+    <string name="title_activity_go_hunt_screen">GoHuntScreen</string>
+    <string name="title_activity_matchup_history_screen">MatchupHistoryScreen</string>
+    <string name="title_activity_map_screen">MapScreen</string>
+
+</resources>

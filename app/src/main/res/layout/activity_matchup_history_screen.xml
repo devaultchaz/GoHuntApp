@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context="chaz.org.myapplication.MatchupHistoryScreen">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout16">
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout16"
+        android:layout_alignRight="@+id/linearLayout16"
+        android:layout_alignEnd="@+id/linearLayout16"
+        android:id="@+id/linearLayout17">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView9"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/linearLayout16"
+        android:layout_toEndOf="@+id/linearLayout16"
+        android:layout_above="@+id/linearLayout17"
+        android:id="@+id/linearLayout18">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Go Hunt"
+            android:id="@+id/textView28"
+            android:textSize="100dp"/>
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView10"
+        android:layout_toRightOf="@+id/linearLayout16"
+        android:layout_alignTop="@+id/linearLayout17"/>
+
+    <ListView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView11"
+        android:layout_alignRight="@+id/linearLayout18"
+        android:layout_alignEnd="@+id/linearLayout18"
+        android:layout_toRightOf="@+id/listView10"
+        android:layout_toEndOf="@+id/listView10"
+        android:layout_alignTop="@+id/listView10"/>
+</RelativeLayout>
