@@ -1,17 +1,36 @@
 package chaz.org.myapplication;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+
+    //Nav button to go to go hunt screen
+    public void onClick(View view){
+        Intent myIntent = new Intent(this, GoHuntScreen.class);
+
+        startActivity(myIntent);
+
+    }
+
+    //Nav button to go to map screen
+    public void onClickMap(View view){
+        Intent mapIntent = new Intent(this, MapScreen.class);
+
+        startActivity(mapIntent);
     }
 
 
