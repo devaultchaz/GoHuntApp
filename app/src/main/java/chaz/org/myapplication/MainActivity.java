@@ -31,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
         Intent mapIntent = new Intent(this, MapScreen.class);
 
         startActivity(mapIntent);
+
         
     }
 
