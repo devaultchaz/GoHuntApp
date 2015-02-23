@@ -1,9 +1,11 @@
 package chaz.org.myapplication;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class GoHuntScreen extends ActionBarActivity {
@@ -12,6 +14,22 @@ public class GoHuntScreen extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_go_hunt_screen);
+    }
+
+    //Nav button to go to homescreen
+    public void onClick(View view){
+        Intent homeIntent = new Intent(this, MainActivity.class);
+
+        startActivity(homeIntent);
+
+    }
+
+
+    //Nav button to go to map screen
+    public void onClickMap(View view){
+        Intent mapIntent = new Intent(this, MapScreen.class);
+
+        startActivity(mapIntent);
     }
 
 
