@@ -6,16 +6,93 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    ListView mListView;
+
+    ListView mHuntersList;
+
+    ListView mTreeStandList;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        mListView = (ListView) findViewById(R.id.listView);
+
+        mHuntersList = (ListView) findViewById(R.id.listView2);
+
+        String[] values = new String[]{"Home","Go Hunt","Map"};
+
+        String[] values2 = new String[]{"Jim Davis","Greg Mathews","Arnold Fuller"};
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
+
+        mHuntersList.setAdapter(adapter2);
+
+        mHuntersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
+
+
+                //the item clicked
+                String itemValue2 = (String)mHuntersList.getItemAtPosition(position);
+
+                Toast.makeText(getApplicationContext(),
+                        "Position: " + position + "Value: " + itemValue2,
+                        Toast.LENGTH_LONG).show();
+
+
+            }
+
+
+        });
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
+
+
+
+        mListView.setAdapter(adapter);
+
+        //set listener for the listview
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
+
+
+                //the item clicked
+                String itemValue = (String)mListView.getItemAtPosition(position);
+
+                Toast.makeText(getApplicationContext(),
+                        "Position: " + position + "Value: " + itemValue,
+                        Toast.LENGTH_LONG).show();
+
+
+            }
+
+
+        });
+
+
+
+
     }
+
+
+
+
 
 
     //Nav button to go to go hunt screen
