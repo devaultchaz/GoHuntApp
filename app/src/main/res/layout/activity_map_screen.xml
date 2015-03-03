@@ -16,11 +16,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout19">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/grouppicture"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="fill_parent"
+        android:layout_width="200dp"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -29,10 +35,26 @@
         android:layout_alignEnd="@+id/linearLayout19"
         android:id="@+id/linearLayout20">
 
-        <ListView
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listView12"/>
+            android:text="Home"
+            android:id="@+id/button11"
+            android:onClick="onHomeClick"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Go Hunt"
+            android:id="@+id/button12"
+            android:onClick="onGoClick"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Map"
+            android:id="@+id/button13"
+            android:onClick="onMapClick"/>
     </LinearLayout>
 
     <LinearLayout

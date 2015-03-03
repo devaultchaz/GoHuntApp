@@ -27,11 +27,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
 
-        mListView = (ListView) findViewById(R.id.listView);
-
         mHuntersList = (ListView) findViewById(R.id.listView2);
 
-        String[] values = new String[]{"Home","Go Hunt","Map"};
 
         String[] values2 = new String[]{"Jim Davis","Greg Mathews","Arnold Fuller"};
 
@@ -59,35 +56,6 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
-
-
-
-        mListView.setAdapter(adapter);
-
-        //set listener for the listview
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
-
-
-                //the item clicked
-                String itemValue = (String)mListView.getItemAtPosition(position);
-
-                Toast.makeText(getApplicationContext(),
-                        "Position: " + position + "Value: " + itemValue,
-                        Toast.LENGTH_LONG).show();
-
-
-            }
-
-
-        });
-
-
-
-
     }
 
 
@@ -95,8 +63,8 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-    //Nav button to go to go hunt screen
-    public void onClick(View view){
+   // Nav button to go to go hunt screen
+    public void onGoClick(View view){
         Intent myIntent = new Intent(this, GoHuntScreen.class);
 
         startActivity(myIntent);
@@ -104,13 +72,13 @@ public class MainActivity extends ActionBarActivity {
     }
 
     //Nav button to go to map screen
-    public void onClickMap(View view){
+    public void onMapClick(View view) {
         Intent mapIntent = new Intent(this, MapScreen.class);
 
         startActivity(mapIntent);
-
-        
     }
+
+
 
 
     @Override
