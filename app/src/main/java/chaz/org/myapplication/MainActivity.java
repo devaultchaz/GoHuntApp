@@ -29,12 +29,20 @@ public class MainActivity extends ActionBarActivity {
 
         mHuntersList = (ListView) findViewById(R.id.listView2);
 
+        mTreeStandList = (ListView) findViewById(R.id.listView3);
+
 
         String[] values2 = new String[]{"Jim Davis","Greg Mathews","Arnold Fuller"};
 
+        String[] values3 = new String[]{"Kingdom","Acorn","Junkyard", "Big Time"};
+
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
 
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values3);
+
         mHuntersList.setAdapter(adapter2);
+
+        mTreeStandList.setAdapter(adapter3);
 
         mHuntersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
