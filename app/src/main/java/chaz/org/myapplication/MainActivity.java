@@ -32,9 +32,9 @@ public class MainActivity extends ActionBarActivity {
         mTreeStandList = (ListView) findViewById(R.id.listView3);
 
 
-        String[] values2 = new String[]{"Jim Davis","Greg Mathews","Arnold Fuller"};
+        String[] values2 = new String[]{"Jim Davis","Greg Mathews","Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
 
-        String[] values3 = new String[]{"Kingdom","Acorn","Junkyard", "Big Time"};
+        String[] values3 = new String[]{"Kingdom","Acorn","Junkyard", "Big Time","Hilltop","Long-Range","Luck"};
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
 

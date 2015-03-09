@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".MainActivity"
-    >
+                android:background="@drawable/realtree">
 
     <LinearLayout
         android:orientation="vertical"
@@ -12,14 +12,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout"
-        android:background="#ff444444">
+        >
 
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/imageView"
             android:src="@drawable/grouppicture"
-            />
+            android:layout_margin="3dp"/>
 
     </LinearLayout>
 
@@ -31,28 +31,33 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout2"
-        android:background="#ff444444">
+        >
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Home"
             android:id="@+id/button5"
-            />
+            android:background="#ff444444"
+            android:layout_margin="3dp"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Go Hunt"
             android:id="@+id/button6"
-            android:onClick="onGoClick"/>
+            android:onClick="onGoClick"
+            android:background="#ff444444"
+            android:layout_margin="3dp"/>
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Map"
             android:id="@+id/button7"
-            android:onClick="onMapClick"/>
+            android:onClick="onMapClick"
+            android:background="#ff444444"
+            android:layout_margin="3dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -60,7 +65,6 @@
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:id="@+id/linearLayout3"
-        android:background="#ff444444"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/linearLayout"
         android:layout_toEndOf="@+id/linearLayout">
@@ -73,8 +77,9 @@
             android:id="@+id/textView"
             android:textSize="60dp"
             android:paddingLeft="70dp"
-            android:textColor="#ff000000"
-            android:paddingTop="60dp"/>
+            android:textColor="#ffff9912"
+            android:paddingTop="60dp"
+            />
 
     </LinearLayout>
 
@@ -86,11 +91,12 @@
         android:layout_toRightOf="@+id/linearLayout"
         android:layout_toEndOf="@+id/linearLayout"
         android:weightSum="1"
+        android:background="#ff444444"
         >
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="465dp"
+            android:layout_width="350dp"
             android:layout_height="fill_parent">
 
             <TextView
@@ -100,11 +106,12 @@
                 android:text="Hunters"
                 android:id="@+id/textView31"
                 android:paddingLeft="125dp"
-                android:paddingTop="20dp"/>
+                android:paddingTop="20dp"
+                android:textColor="#ffff9912"/>
 
             <ListView
                 android:layout_width="250dp"
-                android:layout_height="283dp"
+                android:layout_height="220dp"
                 android:id="@+id/listView2"
                 android:layout_below="@+id/linearLayout3"
                 android:layout_toLeftOf="@+id/listView3"
@@ -112,13 +119,22 @@
                 android:layout_marginRight="88dp"
                 android:layout_marginEnd="88dp"
                 android:paddingLeft="100dp"
-                android:paddingTop="50dp"/>
+                android:paddingTop="10dp"
+                android:clickable="true"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Hunter"
+                android:id="@+id/button14"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="5dp"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
+            android:layout_width="250dp"
             android:layout_height="fill_parent">
 
             <TextView
@@ -127,19 +143,35 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Tree Stands"
                 android:id="@+id/textView32"
-                android:paddingTop="25dp"
-                android:paddingLeft="5dp"/>
+                android:paddingTop="20dp"
+                android:paddingLeft="25dp"
+                android:textColor="#ffff9912"/>
 
             <ListView
                 android:layout_width="200dp"
-                android:layout_height="350dp"
+                android:layout_height="220dp"
                 android:id="@+id/listView3"
                 android:layout_below="@+id/linearLayout3"
                 android:layout_alignRight="@+id/linearLayout3"
                 android:layout_alignEnd="@+id/linearLayout3"
                 android:layout_marginRight="248dp"
                 android:layout_marginEnd="248dp"
-                android:paddingTop="50dp"/>
+                android:paddingTop="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Tree Stand"
+                android:id="@+id/button15"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="250dp"
+            android:layout_height="match_parent">
+
         </LinearLayout>
 
     </LinearLayout>

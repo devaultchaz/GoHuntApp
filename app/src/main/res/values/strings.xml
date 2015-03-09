@@ -10,5 +10,7 @@
     <string name="title_activity_go_hunt_screen">GoHuntScreen</string>
     <string name="title_activity_matchup_history_screen">MatchupHistoryScreen</string>
     <string name="title_activity_map_screen">MapScreen</string>
+    <string name="title_activity_add__hunter">Add_Hunter</string>
+    <string name="title_activity_add__tree__stand">Add_Tree_Stand</string>
 
 </resources>
