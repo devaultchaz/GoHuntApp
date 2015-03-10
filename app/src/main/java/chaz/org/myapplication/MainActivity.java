@@ -71,19 +71,38 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-   // Nav button to go to go hunt screen
-    public void onGoClick(View view){
-        Intent myIntent = new Intent(this, GoHuntScreen.class);
+    // Nav button to go to add hunter screen
+    public void onAddHClick(View view){
+        Intent myAddHIntent = new Intent(this, Add_Hunter.class);
 
-        startActivity(myIntent);
+        startActivity(myAddHIntent);
 
     }
+
+
+    // Nav button to go to add tree stand screen
+    public void onAddTClick(View view){
+        Intent myAddTIntent = new Intent(this, Add_Tree_Stand.class);
+
+        startActivity(myAddTIntent);
+
+    }
+
+
+
 
     //Nav button to go to map screen
     public void onMapClick(View view) {
         Intent mapIntent = new Intent(this, MapScreen.class);
 
         startActivity(mapIntent);
+    }
+
+    //Nav button to go to go hunt screen
+    public void onGoClick(View view){
+        Intent mapGoIntent = new Intent(this, GoHuntScreen.class);
+
+        startActivity(mapGoIntent);
     }
 
 

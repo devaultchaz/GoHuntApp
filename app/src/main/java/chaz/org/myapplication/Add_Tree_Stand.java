@@ -1,9 +1,11 @@
 package chaz.org.myapplication;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Add_Tree_Stand extends ActionBarActivity {
@@ -13,6 +15,29 @@ public class Add_Tree_Stand extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__tree__stand);
     }
+
+    // Nav button to go to home screen
+    public void onClick(View view){
+        Intent myIntent = new Intent(this, MainActivity.class);
+
+        startActivity(myIntent);
+
+    }
+
+    //Nav button to go to map screen
+    public void onMapClick(View view) {
+        Intent mapIntent = new Intent(this, MapScreen.class);
+
+        startActivity(mapIntent);
+    }
+
+    //Nav button to go to go hunt screen
+    public void onGoClick(View view){
+        Intent mapGoIntent = new Intent(this, GoHuntScreen.class);
+
+        startActivity(mapGoIntent);
+    }
+
 
 
     @Override

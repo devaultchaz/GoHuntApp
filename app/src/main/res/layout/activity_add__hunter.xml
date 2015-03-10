@@ -2,15 +2,133 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                tools:context="chaz.org.myapplication.Add_Hunter">
+                tools:context="chaz.org.myapplication.Add_Hunter"
+                android:background="@drawable/realtree">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout22">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:src="@drawable/grouppicture"
+            android:layout_margin="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout22"
+        android:id="@+id/linearLayout23">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:id="@+id/button16"
+            android:layout_margin="3dp"
+            android:onClick="onClick"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Go Hunt"
+            android:id="@+id/button17"
+            android:layout_margin="3dp"
+            android:onClick="onGoClick"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Map"
+            android:id="@+id/button18"
+            android:layout_margin="3dp"
+            android:onClick="onMapClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/linearLayout22"
+        android:layout_toEndOf="@+id/linearLayout22"
+        android:layout_above="@+id/linearLayout23">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Buck Commander"
+            android:id="@+id/textView33"
+            android:paddingLeft="70dp"
+            android:paddingTop="60dp"
+            android:textColor="#ffff9912"
+            android:textSize="60dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/linearLayout22"
+        android:layout_toRightOf="@+id/linearLayout22"
+        android:layout_toEndOf="@+id/linearLayout22"
+        android:background="#ff444444">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Name:"
+                android:id="@+id/textView34"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:textSize="30dp"
+                android:textColor="#ffff9912"/>
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText4"
+                android:layout_row="0"
+                android:layout_column="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Weapon:"
+                android:id="@+id/textView35"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:textSize="30dp"
+                android:textColor="#ffff9912"/>
+
+            <EditText
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText5"
+                android:layout_row="1"
+                android:layout_column="1"/>
+        </GridLayout>
+    </LinearLayout>
 </RelativeLayout>

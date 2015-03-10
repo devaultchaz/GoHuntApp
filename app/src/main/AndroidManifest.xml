@@ -40,6 +40,14 @@
             android:name=".MapScreen"
             android:label="@string/title_activity_map_screen" >
         </activity>
+        <activity
+            android:name=".Add_Hunter"
+            android:label="@string/title_activity_add__hunter" >
+        </activity>
+        <activity
+            android:name=".Add_Tree_Stand"
+            android:label="@string/title_activity_add__tree__stand" >
+        </activity>
     </application>
 
 </manifest>
