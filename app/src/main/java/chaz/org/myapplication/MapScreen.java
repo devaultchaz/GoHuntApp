@@ -17,7 +17,7 @@ public class MapScreen extends ActionBarActivity {
     }
 
 
-    // Nav button to go to go hunt screen
+    // Nav button to go to home screen
     public void onHomeClick(View view){
         Intent homeIntent = new Intent(this, MainActivity.class);
 

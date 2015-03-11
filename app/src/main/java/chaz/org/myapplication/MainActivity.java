@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-    ListView mListView;
+
 
     ListView mHuntersList;
 
@@ -49,12 +49,37 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
 
-
+                Intent intent = new Intent(MainActivity.this, HunterScreen.class);
+                startActivity(intent);
                 //the item clicked
                 String itemValue2 = (String)mHuntersList.getItemAtPosition(position);
 
                 Toast.makeText(getApplicationContext(),
                         "Position: " + position + "Value: " + itemValue2,
+                        Toast.LENGTH_LONG).show();
+
+
+
+            }
+
+
+        });
+
+
+
+        mTreeStandList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
+
+                Intent intent = new Intent(MainActivity.this, TreeStandScreen.class);
+                startActivity(intent);
+
+                //the item clicked
+                String itemValue3 = (String)mTreeStandList.getItemAtPosition(position);
+
+                Toast.makeText(getApplicationContext(),
+                        "Position: " + position + "Value: " + itemValue3,
                         Toast.LENGTH_LONG).show();
 
 
