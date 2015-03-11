@@ -26,29 +26,37 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //create the hunter listview
         mHuntersList = (ListView) findViewById(R.id.listView2);
 
+        //create the tree stand listview
         mTreeStandList = (ListView) findViewById(R.id.listView3);
 
-
+        //create the string that will hold the values of the array for hunters
         String[] values2 = new String[]{"Jim Davis","Greg Mathews","Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
 
+        //create the string that will hold the values of the array for tree stands
         String[] values3 = new String[]{"Kingdom","Acorn","Junkyard", "Big Time","Hilltop","Long-Range","Luck"};
 
+        //create the array that holds the hunter values that will be placed in the hunter listview
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
 
+        //create the array that holds the tree stand values that will be placed in the tree stand listview
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values3);
 
+        //set the hunter adapter
         mHuntersList.setAdapter(adapter2);
 
+        //set the tree stand adapter
         mTreeStandList.setAdapter(adapter3);
 
+        //set the hunter onclicklistener so when an item in the listview is clicked it will perform something
         mHuntersList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
 
+                //set the intent to go to the hunterscreen when a item is clicked
                 Intent intent = new Intent(MainActivity.this, HunterScreen.class);
                 startActivity(intent);
                 //the item clicked
@@ -66,12 +74,13 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-
+        //set the tree stand onclicklistneer so when an item in the listview is click it will perform something
         mTreeStandList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(final AdapterView<?> parent, final View view, final int position, final long id) {
 
+                //set the intent to go to the treestandscreen when an item is clicked
                 Intent intent = new Intent(MainActivity.this, TreeStandScreen.class);
                 startActivity(intent);
 
