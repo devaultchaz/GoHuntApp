@@ -82,17 +82,14 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_below="@+id/linearLayout22"
         android:layout_toRightOf="@+id/linearLayout22"
         android:layout_toEndOf="@+id/linearLayout22"
         android:background="#ff444444">
 
         <GridLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="386dp"
+            android:layout_height="165dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +105,7 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText4"
+                android:id="@+id/editTextName"
                 android:layout_row="0"
                 android:layout_column="1"/>
 
@@ -126,9 +123,18 @@
             <EditText
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5"
+                android:id="@+id/editTextWeapon"
                 android:layout_row="1"
                 android:layout_column="1"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Hunter"
+                android:id="@+id/btnSave"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:onClick="onAddClick"/>
         </GridLayout>
     </LinearLayout>
 </RelativeLayout>

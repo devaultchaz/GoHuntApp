@@ -129,6 +129,12 @@
                 android:layout_marginTop="5dp"
                 android:onClick="onAddHClick"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get All"
+                android:id="@+id/btnGetAll"/>
+
         </LinearLayout>
 
         <LinearLayout
