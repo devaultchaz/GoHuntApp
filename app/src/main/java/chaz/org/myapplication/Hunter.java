@@ -1,8 +1,5 @@
 package chaz.org.myapplication;
 
-/**
- * Created by Chaz on 3/11/2015.
- */
 
 public class Hunter {
     // Labels table name
