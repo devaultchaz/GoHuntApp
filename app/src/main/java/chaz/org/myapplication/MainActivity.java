@@ -20,37 +20,7 @@ public class MainActivity extends ActionBarActivity {
     ListView mTreeStandList;
 
 
-/*
-        Button btnGetAll;
-        TextView hunter_Id;
 
-        @Override
-        public void onClick(View view) {
-
-
-
-                HunterRepo repo = new HunterRepo(this);
-
-                ArrayList<HashMap<String, String>> hunterList =  repo.getStudentList();
-                if(hunterList.size()!=0) {
-                    ListView lv = getListView();
-                    lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            hunter_Id = (TextView) view.findViewById(R.id.hunter_Id);
-                            String hunterId = hunter_Id.getText().toString();
-                            Intent objIndent = new Intent(getApplicationContext(), Add_Hunter.class);
-                            objIndent.putExtra("hunter_Id", Integer.parseInt(hunterId));
-                            startActivity(objIndent);
-                        }
-                    });
-                    ListAdapter adapter = new SimpleAdapter( MainActivity.this,hunterList, R.layout.view_hunter_entry, new String[] { "id","name"}, new int[] {R.id.hunter_Id, R.id.hunter_name});
-                    setListAdapter(adapter);
-
-
-                }
-        }
-*/
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +42,8 @@ public class MainActivity extends ActionBarActivity {
                     findViewById(R.id.listView3);
 
             //create the string that will hold the values of the array for hunters
+            
+
             String[] values2 = new String[]{"Jim Davis", "Greg Mathews", "Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
 
             //create the string that will hold the values of the array for tree stands

@@ -2,18 +2,47 @@ package chaz.org.myapplication;
 
 
 public class Hunter {
-    // Labels table name
-    public static final String TABLE = "Hunter";
+    private int mID;
+    private String mName;
+    private String mWeapon;
 
-    // Labels Table Columns names
-    public static final String KEY_ID = "id";
-    public static final String KEY_name = "name";
-    public static final String KEY_weapon = "weapon";
+    public Hunter(){
 
+    }
 
-    // property help us to keep data
-    public int hunter_ID;
-    public String name;
-    public String weapon;
+    public Hunter(int id, String name, String weapon){
+        mID = id;
+        mName = name;
+        mWeapon = weapon;
 
+    }
+
+    public Hunter(String name, String weapon){
+        mName = name;
+        mWeapon = weapon;
+    }
+
+    public int getID() {
+        return mID;
+    }
+
+    public void setID(final int ID) {
+        mID = ID;
+    }
+
+    public String getName() {
+        return mName;
+    }
+
+    public void setName(final String name) {
+        mName = name;
+    }
+
+    public String getWeapon() {
+        return mWeapon;
+    }
+
+    public void setWeapon(final String weapon) {
+        mWeapon = weapon;
+    }
 }
