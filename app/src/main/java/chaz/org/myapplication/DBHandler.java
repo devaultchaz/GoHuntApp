@@ -37,6 +37,7 @@ public class DBHandler extends SQLiteOpenHelper {
         //execute SQL command
         db.execSQL(CREATE_HUNTERS_TABLE);
 
+
     }
 
     public Hunter getHunters(){

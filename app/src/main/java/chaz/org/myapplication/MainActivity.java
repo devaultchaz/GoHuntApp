@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
                     findViewById(R.id.listView3);
 
             //create the string that will hold the values of the array for hunters
-            
+
 
             String[] values2 = new String[]{"Jim Davis", "Greg Mathews", "Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
 
