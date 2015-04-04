@@ -20,7 +20,7 @@ public class Add_Hunter extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add__hunter);
+        setContentView(R.layut.activity_add__hunter);
 
 
 
