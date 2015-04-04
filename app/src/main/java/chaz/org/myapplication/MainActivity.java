@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
             String[] values2 = new String[]{"Jim Davis", "Greg Mathews", "Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
 
             //create the string that will hold the values of the array for tree stands
-            String[] values3 = new String[]{"Kingdom", "Acorn", "Junkyard", "Big Time", "Hilltop", "Long-Range", "Luck"};
+            String[] values4 = new String[]{"Kingdom", "Acorn", "Junkyard", "Big Time", "Hilltop", "Long-Range", "Luck"};
 
             //create the array that holds the hunter values that will be placed in the hunter listview
             ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
