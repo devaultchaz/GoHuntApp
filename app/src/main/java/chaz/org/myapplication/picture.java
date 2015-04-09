@@ -36,6 +36,7 @@ public class picture extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture);
+        
 
         btnCapture = (Button) findViewById(R.id.button26);
         if (!hasCamera()) {
