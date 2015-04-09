@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="chaz.org.myapplication" >
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -49,7 +56,14 @@
             android:name=".Add_Tree_Stand"
             android:label="@string/title_activity_add__tree__stand" >
         </activity>
-
+        <activity
+            android:name=".picture"
+            android:label="@string/title_activity_picture" >
+        </activity>
+        <activity
+            android:name=".Audio"
+            android:label="@string/title_activity_audio" >
+        </activity>
     </application>
 
 </manifest>

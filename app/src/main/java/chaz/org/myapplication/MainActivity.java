@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
             String[] values2 = new String[]{"Jim Davis", "Greg Mathews", "Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
 
             //create the string that will hold the values of the array for tree stands
-            String[] values4 = new String[]{"Kingdom", "Acorn", "Junkyard", "Big Time", "Hilltop", "Long-Range", "Luck"};
+            String[] values3 = new String[]{"Kingdom", "Acorn", "Junkyard", "Big Time", "Hilltop", "Long-Range", "Luck"};
 
             //create the array that holds the hunter values that will be placed in the hunter listview
             ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
@@ -159,6 +159,21 @@ public class MainActivity extends ActionBarActivity {
         Intent mapGoIntent = new Intent(this, GoHuntScreen.class);
 
         startActivity(mapGoIntent);
+    }
+
+    //Nav button to go to camera capture page
+    public void imageClick(View view){
+        Intent imageIntent = new Intent(this, picture.class);
+
+        startActivity(imageIntent);
+    }
+
+
+    //Nav button to go to audio recorder page
+    public void onAudioClick(View view){
+        Intent audioIntent = new Intent(this, Audio.class);
+
+        startActivity(audioIntent);
     }
 
 
