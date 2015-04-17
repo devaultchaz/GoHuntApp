@@ -161,20 +161,15 @@ public class MainActivity extends ActionBarActivity {
         startActivity(mapGoIntent);
     }
 
-    //Nav button to go to camera capture page
-    public void imageClick(View view){
-        Intent imageIntent = new Intent(this, picture.class);
+    //Nav button to go to SMS and email page
+    public void onSMSClick(View view){
+        Intent smsIntent = new Intent(this, SMSandEmail.class);
 
-        startActivity(imageIntent);
+        startActivity(smsIntent);
     }
 
 
-    //Nav button to go to audio recorder page
-    public void onAudioClick(View view){
-        Intent audioIntent = new Intent(this, Audio.class);
 
-        startActivity(audioIntent);
-    }
 
 
 

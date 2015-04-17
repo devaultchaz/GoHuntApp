@@ -132,9 +132,9 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Take Picture"
+                android:text="SMS &amp; Email"
                 android:id="@+id/btnGetAll"
-                android:onClick="imageClick"/>
+                android:onClick="onSMSClick"/>
 
         </LinearLayout>
 
@@ -173,12 +173,6 @@
                 android:layout_marginTop="5dp"
                 android:onClick="onAddTClick"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Audio Recorder"
-                android:id="@+id/button29"
-                android:onClick="onAudioClick"/>
         </LinearLayout>
 
         <LinearLayout

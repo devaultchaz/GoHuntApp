@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+
 
     <uses-feature android:name="android.hardware.camera" />
 
@@ -56,13 +59,11 @@
             android:name=".Add_Tree_Stand"
             android:label="@string/title_activity_add__tree__stand" >
         </activity>
+
+
         <activity
-            android:name=".picture"
-            android:label="@string/title_activity_picture" >
-        </activity>
-        <activity
-            android:name=".Audio"
-            android:label="@string/title_activity_audio" >
+            android:name=".SMSandEmail"
+            android:label="@string/title_activity_smsand_email" >
         </activity>
     </application>
 

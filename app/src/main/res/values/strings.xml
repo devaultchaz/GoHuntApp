@@ -14,5 +14,6 @@
     <string name="title_activity_add__tree__stand">Add_Tree_Stand</string>
     <string name="title_activity_picture">picture</string>
     <string name="title_activity_audio">Audio</string>
+    <string name="title_activity_smsand_email">SMSandEmail</string>
 
 </resources>
