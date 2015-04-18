@@ -15,5 +15,6 @@
     <string name="title_activity_picture">picture</string>
     <string name="title_activity_audio">Audio</string>
     <string name="title_activity_smsand_email">SMSandEmail</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

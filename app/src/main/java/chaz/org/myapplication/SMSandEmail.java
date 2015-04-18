@@ -93,6 +93,14 @@ public class SMSandEmail extends ActionBarActivity {
 
     }
 
+    //Nav button to go to go home screen
+    public void onHomeClick(View view){
+        Intent homeIntent = new Intent(this, MainActivity.class);
+
+        startActivity(homeIntent);
+    }
+
+
     public void onSendEmailClick(View view){
 //get values of edittext fields
         String emailAdress = mEmailAdress.getText().toString();
