@@ -38,6 +38,20 @@ public class MapsActivity extends FragmentActivity {
             LatLng indyZooCoordinates = new LatLng(39.767674, -86.180034);
             Marker zooMarker = mMap.addMarker(new MarkerOptions().position(indyZooCoordinates).title("Zoo").snippet("Indianapolis Zoo"));
 
+            //sets geo coordinates for a first spot and shows up in as a marker
+            LatLng oneCoordinates = new LatLng(38.768674, -86.180034);
+            Marker oneMarker = mMap.addMarker(new MarkerOptions().position(oneCoordinates).title("One").snippet("Marker #1"));
+
+            //sets geo coordinates for a second spot and shows up in as a marker
+            LatLng twoCoordinates = new LatLng(37.765674, -86.180034);
+            Marker twoMarker = mMap.addMarker(new MarkerOptions().position(twoCoordinates).title("Two").snippet("Marker #2"));
+
+            //sets geo coordinates for a third spot and shows up in as a marker
+            LatLng threeCoordinates = new LatLng(36.764674, -86.180034);
+            Marker threeMarker = mMap.addMarker(new MarkerOptions().position(threeCoordinates).title("Three").snippet("Marker #3"));
+
+
+
 
         }
 
