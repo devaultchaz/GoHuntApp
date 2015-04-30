@@ -6,15 +6,61 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+
 
 
 public class Add_Tree_Stand extends ActionBarActivity {
+
+    EditText mTNameTextView;
+    EditText mTypeTextView;
+    EditText mNotesTextView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__tree__stand);
+
+
+        mTNameTextView = (EditText)findViewById(R.id.editTextTName);
+        mTypeTextView = (EditText)findViewById(R.id.editTextType);
+        mNotesTextView = (EditText)findViewById(R.id.editTextNotes);
+
+
     }
+
+    //add treestand
+    public void onAddClick(View view){
+        //create ts handler
+        TSHandler tsHandler = new TSHandler(this, null, null, 1);
+
+        //get user treestand name
+        String myTName = mTNameTextView.getText().toString();
+
+        //get user treestand type
+        String myType = mTypeTextView.getText().toString();
+
+        //get user treestand notes
+        String myNotes = mNotesTextView.getText().toString();
+
+
+        //make new hunter
+        TreeStand myTreeStand = new TreeStand(myTName, myType, myNotes);
+
+        //add treestand to database
+        tsHandler.addTreeStand(myTreeStand);
+
+        //clear input fields
+        mTNameTextView.setText("");
+        mTypeTextView.setText("");
+        mNotesTextView.setText("");
+
+    }
+
+
+
 
     // Nav button to go to home screen
     public void onClick(View view){

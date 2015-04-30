@@ -34,32 +34,38 @@ public class MainActivity extends ActionBarActivity {
             //set the hunter listview
             mHuntersList = (ListView)
 
-                    findViewById(R.id.listView2);
+                    findViewById(R.id.listViewHunters);
 
             //set the tree stand listview
             mTreeStandList = (ListView)
 
                     findViewById(R.id.listView3);
 
-            //create the string that will hold the values of the array for hunters
+            //get hunters into list
+
+            //create db handler
+            DBHandler dbHandler = new DBHandler(this, null, null, 1);
+
+            //get hunters to display from dbhandler
+            Hunter [] myHunters = dbHandler.displayHunters(5);
+
+            //set adapter to listview
+            ArrayAdapter<Hunter> adapter = new ArrayAdapter<Hunter>(this, android.R.layout.simple_list_item_1, myHunters);
+
+            mHuntersList.setAdapter(adapter);
+
+            //create ts handler
+            TSHandler tsHandler = new TSHandler(this, null, null, 1);
+
+            //get treestands to display from tshandler
+            TreeStand [] myTreestands = tsHandler.displayTreestands(5);
+
+            //set adapter to listview
+            ArrayAdapter<TreeStand> adapterT = new ArrayAdapter<TreeStand>(this, android.R.layout.simple_list_item_1, myTreestands);
+
+            mTreeStandList.setAdapter(adapterT);
 
 
-            String[] values2 = new String[]{"Jim Davis", "Greg Mathews", "Arnold Fuller", "Adam James", "Dan Katz", "Fred Jones"};
-
-            //create the string that will hold the values of the array for tree stands
-            String[] values3 = new String[]{"Kingdom", "Acorn", "Junkyard", "Big Time", "Hilltop", "Long-Range", "Luck"};
-
-            //create the array that holds the hunter values that will be placed in the hunter listview
-            ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values2);
-
-            //create the array that holds the tree stand values that will be placed in the tree stand listview
-            ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values3);
-
-            //set the hunter adapter
-            mHuntersList.setAdapter(adapter2);
-
-            //set the tree stand adapter
-            mTreeStandList.setAdapter(adapter3);
 
             //set the hunter onclicklistener so when an item in the listview is clicked it will perform something
             mHuntersList.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -71,15 +77,15 @@ public class MainActivity extends ActionBarActivity {
                                                     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
                                                                             final long id) {
 
+                                                        String data = "Test";
+
                                                         //set the intent to go to the hunterscreen when a item is clicked
                                                         Intent intent = new Intent(MainActivity.this, HunterScreen.class);
+                                                        intent.putExtra("hunter",data);
                                                         startActivity(intent);
                                                         //the item clicked
-                                                        String itemValue2 = (String) mHuntersList.getItemAtPosition(position);
 
-                                                        Toast.makeText(getApplicationContext(),
-                                                                "Position: " + position + "Value: " + itemValue2,
-                                                                Toast.LENGTH_LONG).show();
+
 
 
                                                     }
@@ -104,10 +110,10 @@ public class MainActivity extends ActionBarActivity {
                                                           startActivity(intent);
 
                                                           //the item clicked
-                                                          String itemValue3 = (String) mTreeStandList.getItemAtPosition(position);
+                                                          //String itemValue3 = (String) parent.getItemAtPosition(position);
 
                                                           Toast.makeText(getApplicationContext(),
-                                                                  "Position: " + position + "Value: " + itemValue3,
+                                                                  "Position: " + position,
                                                                   Toast.LENGTH_LONG).show();
 
 
@@ -167,6 +173,10 @@ public class MainActivity extends ActionBarActivity {
 
         startActivity(smsIntent);
     }
+
+
+
+
 
 
 

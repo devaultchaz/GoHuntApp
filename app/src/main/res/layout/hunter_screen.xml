@@ -71,8 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Hunter&apos;s Name"
-            android:id="@+id/textView2"
+            android:text="GO HUNT"
+            android:id="@+id/textViewName"
             android:textSize="60dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="60dp"
@@ -101,7 +101,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Weapon:"
+                android:text="Name:"
                 android:id="@+id/textView3"
                 android:layout_row="0"
                 android:layout_column="0"
@@ -112,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Mathews Creed XS"
-                android:id="@+id/textView4"
+                android:id="@+id/textViewName"
                 android:layout_row="0"
                 android:layout_column="1"
                 />
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Bucks:"
+                android:text="Weapon:"
                 android:id="@+id/textView5"
                 android:layout_row="1"
                 android:layout_column="0"
@@ -131,47 +131,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="1"
-                android:id="@+id/textView7"
+                android:text="1falfdkjflksda"
+                android:id="@+id/textViewWeapon"
                 android:layout_row="1"
-                android:layout_column="1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Does:"
-                android:id="@+id/textView6"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:textSize="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="2"
-                android:id="@+id/textView8"
-                android:layout_row="2"
-                android:layout_column="1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Treestand History:"
-                android:id="@+id/textView9"
-                android:layout_row="3"
-                android:layout_column="0"
-                android:textSize="30dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Acorn, Kingdom"
-                android:id="@+id/textView10"
-                android:layout_row="3"
                 android:layout_column="1"/>
 
         </GridLayout>

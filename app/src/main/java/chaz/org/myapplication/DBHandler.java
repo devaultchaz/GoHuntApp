@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHandler extends SQLiteOpenHelper {
     //declares database constants
-    private static final int DATABASE_VERSION =1;
+    private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "database.db";
 
     //declare table constants
@@ -21,12 +21,13 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String COLUMN_WEAPON = "weapon";
 
     //constructor
-    public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
+    public DBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
 
+
     @Override
-    public void onCreate(SQLiteDatabase db){
+    public void onCreate(SQLiteDatabase db) {
         //construct SQL command
         String CREATE_HUNTERS_TABLE = "CREATE TABLE " +
                 TABLE_HUNTERS + "(" +
@@ -40,40 +41,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
-    public Hunter getHunters(){
-        //construct SQL string
-        String sql_query = "SELECT * FROM " + TABLE_HUNTERS;
-
-        //open DB
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        //execute query and store data
-        Cursor myCursor = db.rawQuery(sql_query, null);
-
-        //create empty student object
-        Hunter myHunter = new Hunter();
-
-        if(myCursor.moveToFirst()){
-            myHunter.setID(myCursor.getInt(0));
-            myHunter.setName(myCursor.getString(1));
-            myHunter.setWeapon(myCursor.getString(2));
-            myCursor.close();
-
-        }
-        else
-            myHunter = null;
-
-        //close db
-        db.close();
-        return myHunter;
-
-
-    }
-
-
-
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //drop table if it exists
         db.execSQL("DROP TABLE IT EXISTS" + TABLE_HUNTERS);
 
@@ -81,9 +50,63 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+    public Hunter [] displayHunters(int number){
+        //construct SQL string
+        String sql_query = "SELECT * FROM " + TABLE_HUNTERS;
+
+        //open db
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //execute query
+        Cursor myCursor = db.rawQuery(sql_query, null);
+        Hunter [] myHunters;
+
+        if(myCursor != null){
+            int count = myCursor.getCount();
+            int length = count;
+            if(length > number)
+                length = number;
+
+            //create array of hunters
+            myHunters = new Hunter[length];
+
+            int index = count - length;
+
+            myCursor.moveToFirst();
+            myCursor.move(index);
+
+            for(int i = 0; i < length; i++){
+                myHunters[i] = new Hunter();
+                myHunters[i].setID(myCursor.getInt(0));
+                myHunters[i].setName(myCursor.getString(1));
+                myHunters[i].setWeapon(myCursor.getString(2));
+                myCursor.moveToNext();
+            }
+            myCursor.close();
+
+        }
+        else{
+            myHunters = new Hunter[1];
+            myHunters[0] = new Hunter();
+            myHunters[0].setID(0);
+            myHunters[0].setName("empty");
+            myHunters[0].setWeapon("empty");
+        }
+        //close db
+        db.close();
+        return myHunters;
+
+    }
+
+
+   /* @Override
+    public String toString() {
+        return mName;
+    }
+*/
 
     //add hunter to hunters table
-    public void addHunter(Hunter hunter){
+    public void addHunter(Hunter hunter) {
         //prepare values for new entry
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, hunter.getName());
@@ -100,5 +123,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     }
+
 
 }

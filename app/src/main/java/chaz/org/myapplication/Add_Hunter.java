@@ -53,6 +53,7 @@ public class Add_Hunter extends ActionBarActivity {
         mWeaponTextView.setText("");
 
 
+
     }
 
 
