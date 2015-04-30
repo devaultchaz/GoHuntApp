@@ -129,21 +129,6 @@
                 android:layout_marginTop="5dp"
                 android:onClick="onAddHClick"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SMS &amp; Email"
-                android:id="@+id/btnGetAll"
-                android:onClick="onSMSClick"/>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Find"
-                android:id="@+id/Find"
-                android:layout_gravity="center_horizontal"
-                android:onClick="onFindClick"/>
-
         </LinearLayout>
 
         <LinearLayout

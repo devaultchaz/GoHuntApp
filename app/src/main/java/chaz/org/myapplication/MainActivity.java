@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
             DBHandler dbHandler = new DBHandler(this, null, null, 1);
 
             //get hunters to display from dbhandler
-            Hunter [] myHunters = dbHandler.displayHunters(5);
+            Hunter [] myHunters = dbHandler.displayHunters(20);
 
             //set adapter to listview
             ArrayAdapter<Hunter> adapter = new ArrayAdapter<Hunter>(this, android.R.layout.simple_list_item_1, myHunters);
@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity {
             TSHandler tsHandler = new TSHandler(this, null, null, 1);
 
             //get treestands to display from tshandler
-            TreeStand [] myTreestands = tsHandler.displayTreestands(5);
+            TreeStand [] myTreestands = tsHandler.displayTreestands(20);
 
             //set adapter to listview
             ArrayAdapter<TreeStand> adapterT = new ArrayAdapter<TreeStand>(this, android.R.layout.simple_list_item_1, myTreestands);
@@ -127,10 +127,6 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-
-
-
-
     // Nav button to go to add hunter screen
     public void onAddHClick(View view){
         Intent myAddHIntent = new Intent(this, Add_Hunter.class);
@@ -151,8 +147,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
-
     //Nav button to go to map screen
     public void onMapClick(View view) {
         Intent mapIntent = new Intent(this, MapsActivity.class);
@@ -166,21 +160,6 @@ public class MainActivity extends ActionBarActivity {
 
         startActivity(mapGoIntent);
     }
-
-    //Nav button to go to SMS and email page
-    public void onSMSClick(View view){
-        Intent smsIntent = new Intent(this, SMSandEmail.class);
-
-        startActivity(smsIntent);
-    }
-
-
-
-
-
-
-
-
 
 
 

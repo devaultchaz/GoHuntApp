@@ -1,7 +1,9 @@
 package chaz.org.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -101,4 +103,11 @@ public class MapsActivity extends FragmentActivity {
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
+    //Nav button to go to map screen
+    public void onHomeClick(View view) {
+        Intent homeIntent = new Intent(this, MainActivity.class);
+
+        startActivity(homeIntent);
+    }
+
 }
