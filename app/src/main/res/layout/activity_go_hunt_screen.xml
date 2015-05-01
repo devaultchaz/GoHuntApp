@@ -104,11 +104,11 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="350dp"
+            android:layout_width="201dp"
             android:layout_height="fill_parent">
 
             <ListView
-                android:layout_width="300dp"
+                android:layout_width="200dp"
                 android:layout_height="300dp"
                 android:id="@+id/listViewGoHunters"
                 />
@@ -131,7 +131,7 @@
             android:weightSum="1">
 
             <ListView
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="300dp"
                 android:id="@+id/listViewGoTreeStands"/>
 

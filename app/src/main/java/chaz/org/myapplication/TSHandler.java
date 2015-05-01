@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Chaz on 4/30/2015.
  */
@@ -80,6 +83,36 @@ public class TSHandler extends SQLiteOpenHelper {
         db.close();
         return myTreeStand;
     }
+
+    // Getting All Treestands
+    public List<TreeStand> getAllTreeStands() {
+        List<TreeStand> dataListTS = new ArrayList<TreeStand>();
+        // Select All Query
+        String selectQuery = "SELECT * FROM " + TABLE_TREESTANDS;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                TreeStand data = new TreeStand();
+                data.setTreeStandID(Integer.parseInt(cursor.getString(0)));
+                data.setTreeStandName(cursor.getString(1));
+                data.setTreeStandType(cursor.getString(2));
+                data.setTreeStandNotes(cursor.getString(2));
+
+                dataListTS.add(data);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return dataListTS;
+    }
+
+
+
+
 
     public boolean deleteTreeStand(String treestandNameDelete){
         //set default return value

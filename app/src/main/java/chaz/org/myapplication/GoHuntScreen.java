@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.lang.reflect.Array;
+import java.util.Collections;
+import java.util.List;
 
 
 public class GoHuntScreen extends ActionBarActivity {
@@ -40,18 +42,18 @@ public class GoHuntScreen extends ActionBarActivity {
         //create db handler
         DBHandler dbHandler = new DBHandler(this, null, null, 1);
 
+        //ArrayList newHunters = dbHandler.displayHunters(20);
+
         //get hunters to display from dbhandler
-        Hunter [] myHunters = dbHandler.displayHunters(20);
+        //Hunter [] myHunters = dbHandler.displayHunters(20);
 
-        //ArrayList arrayList = dbHandler.displayHunters(20);
+        List<Hunter> data = dbHandler.getAllhunters();
 
-
-        //List<Array> wordList = Arrays.asList();
-        //Collections.shuffle(myHunters);
+        Collections.shuffle(data);
 
 
         //set adapter to listview
-        ArrayAdapter<Hunter> adapter = new ArrayAdapter<Hunter>(this, android.R.layout.simple_list_item_1, myHunters);
+        ArrayAdapter<Hunter> adapter = new ArrayAdapter<Hunter>(this, android.R.layout.simple_list_item_1, data);
 
         mHuntersList.setAdapter(adapter);
 
@@ -61,18 +63,14 @@ public class GoHuntScreen extends ActionBarActivity {
         //get treestands to display from tshandler
         TreeStand [] myTreestands = tsHandler.displayTreestands(20);
 
+        List<TreeStand> dataTS = tsHandler.getAllTreeStands();
+
+        Collections.shuffle(dataTS);
+
         //set adapter to listview
-        ArrayAdapter<TreeStand> adapterT = new ArrayAdapter<TreeStand>(this, android.R.layout.simple_list_item_1, myTreestands);
+        ArrayAdapter<TreeStand> adapterT = new ArrayAdapter<TreeStand>(this, android.R.layout.simple_list_item_1, dataTS);
 
         mTreeStandList.setAdapter(adapterT);
-
-
-
-
-
-
-
-
 
     }
 

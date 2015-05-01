@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Chaz on 3/24/2015.
  */
@@ -50,6 +53,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
     }
+
 
     public Hunter findHunter(String hunterName){
         //construct SQL string
@@ -119,6 +123,32 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
+
+    // Getting All Hunters
+    public List<Hunter> getAllhunters() {
+        List<Hunter> dataList = new ArrayList<Hunter>();
+        // Select All Query
+        String selectQuery = "SELECT * FROM " + TABLE_HUNTERS;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Hunter data = new Hunter();
+                data.setID(Integer.parseInt(cursor.getString(0)));
+                data.setName(cursor.getString(1));
+                data.setWeapon(cursor.getString(2));
+
+                dataList.add(data);
+            } while (cursor.moveToNext());
+        }
+
+        // return contact list
+        return dataList;
+    }
+
 
 
     public Hunter[]  displayHunters(int number){
