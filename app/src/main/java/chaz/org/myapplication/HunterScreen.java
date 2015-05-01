@@ -82,14 +82,6 @@ public class HunterScreen extends ActionBarActivity {
         //get hunters name to delete
         String myHunterName = mHunterName.getText().toString();
 
-        StringTokenizer tokens = new StringTokenizer(myHunterName, " ");
-        String first = tokens.nextToken();// this will contain hunters name
-
-        Toast.makeText(getApplicationContext(),
-                myHunterName,
-                Toast.LENGTH_LONG).show();
-
-
         //delete record
         boolean myResult = dbHandler.deleteHunter(myHunterName);
 

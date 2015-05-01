@@ -66,6 +66,33 @@ public class TreeStandScreen extends ActionBarActivity {
 
     }
 
+    //delete treestand
+    public void onDeleteClick(View view){
+        //create db handler
+        TSHandler tsHandler = new TSHandler(this, null, null, 1);
+
+        //get treestand name to delete
+        String myTreeStandName = mTreeStandName.getText().toString();
+
+        //delete record
+        boolean myResult = tsHandler.deleteTreeStand(myTreeStandName);
+
+        //if deleted successfully
+        if(myResult){
+            mTreeStandName.setText("");
+            mTreeStandType.setText("");
+            mTreeStandNotes.setText("");
+        }
+        else
+            Toast.makeText(getApplicationContext(),
+                    "No Match Found",
+                    Toast.LENGTH_LONG).show();
+
+    }
+
+
+
+
     // Nav button to go to home screen
     public void onClick(View view){
         Intent homeIntent = new Intent(this, MainActivity.class);

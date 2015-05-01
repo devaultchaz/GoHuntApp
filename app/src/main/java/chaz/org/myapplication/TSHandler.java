@@ -81,6 +81,47 @@ public class TSHandler extends SQLiteOpenHelper {
         return myTreeStand;
     }
 
+    public boolean deleteTreeStand(String treestandNameDelete){
+        //set default return value
+        boolean result = false;
+
+        //construct SQL string
+        String sql_query = "SELECT * FROM " + TABLE_TREESTANDS +
+                " WHERE " + COLUMN_TREESTANDNAME + " = \"" +
+                treestandNameDelete + "\"";
+
+        //open DB
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //execute query
+        Cursor myCursor = db.rawQuery(sql_query, null);
+
+        //create empty hunter object
+        Hunter myHunterDelete = new Hunter();
+
+        if (myCursor.moveToFirst()){
+            //get id
+            //myHunterDelete.setID(myCursor.getInt(0));
+
+            //delete entry with hunterid
+            db.delete(TABLE_TREESTANDS, COLUMN_TREESTANDNAME + " = ?",
+                    new String[]{treestandNameDelete});
+
+            //close cursor
+            myCursor.close();
+
+            //set return result to true
+            result = true;
+
+
+        }
+
+        //close db
+        db.close();
+        return result;
+    }
+
+
 
     public TreeStand [] displayTreestands(int number){
         //construct SQL string
