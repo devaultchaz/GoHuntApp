@@ -43,10 +43,11 @@ public class GoHuntScreen extends ActionBarActivity {
         //get hunters to display from dbhandler
         Hunter [] myHunters = dbHandler.displayHunters(20);
 
+        //ArrayList arrayList = dbHandler.displayHunters(20);
 
 
         //List<Array> wordList = Arrays.asList();
-        //Collections.shuffle(wordList);
+        //Collections.shuffle(myHunters);
 
 
         //set adapter to listview
@@ -70,7 +71,11 @@ public class GoHuntScreen extends ActionBarActivity {
 
 
 
+
+
+
     }
+
 
     //performs go hunt feature
     public void onGoHuntClick(View view){

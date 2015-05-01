@@ -141,6 +141,7 @@ public class DBHandler extends SQLiteOpenHelper {
             //create array of hunters
             myHunters = new Hunter[length];
 
+
             int index = count - length;
 
             myCursor.moveToFirst();

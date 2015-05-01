@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.StringTokenizer;
-
 
 public class HunterScreen extends ActionBarActivity {
 
@@ -45,12 +43,12 @@ public class HunterScreen extends ActionBarActivity {
 
 
         //get hunter name
-        StringTokenizer tokens = new StringTokenizer(extraFromAct1, ",");
-        String first = tokens.nextToken();// this will contain hunters name
-        String second = tokens.nextToken();// this will contain hunters weapon
+        //StringTokenizer tokens = new StringTokenizer(extraFromAct1, ",");
+        //String first = tokens.nextToken();// this will contain hunters name
+        //String second = tokens.nextToken();// this will contain hunters weapon
 
         //check for hunter
-        Hunter myHunter = dbHandler.findHunter(first);
+        Hunter myHunter = dbHandler.findHunter(extraFromAct1);
 
         if(myHunter != null){
             //set name and weapon

@@ -24,7 +24,7 @@ public class Hunter {
 
     @Override
     public String toString(){
-        return mName + ", " + mWeapon;
+        return mName;
     }
 
     public int getID() {
