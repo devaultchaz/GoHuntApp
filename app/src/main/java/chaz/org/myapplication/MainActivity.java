@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -77,11 +78,11 @@ public class MainActivity extends ActionBarActivity {
                                                     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
                                                                             final long id) {
 
-                                                        String data = "Test";
+                                                       //String data = ((TextView) view).getText();
 
                                                         //set the intent to go to the hunterscreen when a item is clicked
                                                         Intent intent = new Intent(MainActivity.this, HunterScreen.class);
-                                                        intent.putExtra("hunter",data);
+                                                        intent.putExtra("hunter",((TextView) view).getText());
                                                         startActivity(intent);
                                                         //the item clicked
 
@@ -107,13 +108,14 @@ public class MainActivity extends ActionBarActivity {
 
                                                           //set the intent to go to the treestandscreen when an item is clicked
                                                           Intent intent = new Intent(MainActivity.this, TreeStandScreen.class);
+                                                          intent.putExtra("treestand",((TextView) view).getText());
                                                           startActivity(intent);
 
                                                           //the item clicked
                                                           //String itemValue3 = (String) parent.getItemAtPosition(position);
 
                                                           Toast.makeText(getApplicationContext(),
-                                                                  "Position: " + position,
+                                                                  ((TextView) view).getText(),
                                                                   Toast.LENGTH_LONG).show();
 
 

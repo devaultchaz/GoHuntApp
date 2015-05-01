@@ -50,7 +50,78 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-    public Hunter [] displayHunters(int number){
+
+    public Hunter findHunter(String hunterName){
+        //construct SQL string
+        String sql_query = "SELECT * FROM " + TABLE_HUNTERS +
+                " WHERE " + COLUMN_NAME + " = \"" + hunterName +
+                "\"";
+
+        //open DB
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //execute query
+        Cursor myCursor = db.rawQuery(sql_query, null);
+
+        //create empty hunter object
+        Hunter myHunter = new Hunter();
+
+        if(myCursor.moveToFirst()){
+            myHunter.setID(myCursor.getInt(0));
+            myHunter.setName(myCursor.getString(1));
+            myHunter.setWeapon(myCursor.getString(2));
+            myCursor.close();
+        }
+        else
+            myHunter = null;
+
+        //close DB
+        db.close();
+        return myHunter;
+    }
+
+    public boolean deleteHunter(String hunterNameDelete){
+        //set default return value
+        boolean result = false;
+
+        //construct SQL string
+        String sql_query = "SELECT * FROM " + TABLE_HUNTERS +
+                " WHERE " + COLUMN_NAME + " = \"" +
+                hunterNameDelete + "\"";
+
+        //open DB
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //execute query
+        Cursor myCursor = db.rawQuery(sql_query, null);
+
+        //create empty hunter object
+        Hunter myHunterDelete = new Hunter();
+
+        if (myCursor.moveToFirst()){
+            //get id
+            //myHunterDelete.setID(myCursor.getInt(0));
+
+            //delete entry with hunterid
+            db.delete(TABLE_HUNTERS, COLUMN_NAME + " = ?",
+                    new String[]{hunterNameDelete});
+
+            //close cursor
+            myCursor.close();
+
+            //set return result to true
+            result = true;
+
+
+        }
+
+        //close db
+        db.close();
+        return result;
+    }
+
+
+    public Hunter[]  displayHunters(int number){
         //construct SQL string
         String sql_query = "SELECT * FROM " + TABLE_HUNTERS;
 
@@ -95,6 +166,8 @@ public class DBHandler extends SQLiteOpenHelper {
         //close db
         db.close();
         return myHunters;
+
+
 
     }
 

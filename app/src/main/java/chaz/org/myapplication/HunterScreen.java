@@ -6,10 +6,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.StringTokenizer;
 
 
 public class HunterScreen extends ActionBarActivity {
+
+    TextView mHunterName;
+
+    TextView mHunterWeapon;
+
 
 
 
@@ -21,9 +29,40 @@ public class HunterScreen extends ActionBarActivity {
 
         String extraFromAct1 = getIntent().getStringExtra("hunter");
 
-        Toast.makeText(getApplicationContext(),
-                extraFromAct1,
-                Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),
+                //extraFromAct1,
+                //Toast.LENGTH_LONG).show();
+
+        //set the hunter textview
+        mHunterName = (TextView)findViewById(R.id.textViewHuntersName);
+
+        //set the hunter textview
+        mHunterWeapon = (TextView)findViewById(R.id.textViewWeapon);
+
+        //create db handler
+        DBHandler dbHandler = new DBHandler(this, null, null, 1);
+
+
+
+        //get hunter name
+        StringTokenizer tokens = new StringTokenizer(extraFromAct1, ",");
+        String first = tokens.nextToken();// this will contain hunters name
+        String second = tokens.nextToken();// this will contain hunters weapon
+
+        //check for hunter
+        Hunter myHunter = dbHandler.findHunter(first);
+
+        if(myHunter != null){
+            //set name and weapon
+            mHunterName.setText(String.valueOf(myHunter.getName()));
+            mHunterWeapon.setText(String.valueOf(myHunter.getWeapon()));
+
+        }
+        else
+            Toast.makeText(getApplicationContext(),
+                    "No Match Found",
+                    Toast.LENGTH_LONG).show();
+
 
     }
 
@@ -32,6 +71,37 @@ public class HunterScreen extends ActionBarActivity {
         Intent homeIntent = new Intent(this, MainActivity.class);
 
         startActivity(homeIntent);
+
+    }
+
+    //delete hunter
+    public void onDeleteClick(View view){
+        //create db handler
+        DBHandler dbHandler = new DBHandler(this, null, null, 1);
+
+        //get hunters name to delete
+        String myHunterName = mHunterName.getText().toString();
+
+        StringTokenizer tokens = new StringTokenizer(myHunterName, " ");
+        String first = tokens.nextToken();// this will contain hunters name
+
+        Toast.makeText(getApplicationContext(),
+                myHunterName,
+                Toast.LENGTH_LONG).show();
+
+
+        //delete record
+        boolean myResult = dbHandler.deleteHunter(myHunterName);
+
+        //if deleted successfully
+        if(myResult){
+            mHunterName.setText("");
+            mHunterWeapon.setText("");
+        }
+        else
+            Toast.makeText(getApplicationContext(),
+                    "No Match Found",
+                    Toast.LENGTH_LONG).show();
 
     }
 

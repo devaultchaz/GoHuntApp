@@ -6,14 +6,64 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class TreeStandScreen extends ActionBarActivity {
+
+    TextView mTreeStandName;
+
+    TextView mTreeStandType;
+
+    TextView mTreeStandNotes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tree_stand_screen);
+
+        String extraFromAct1 = getIntent().getStringExtra("treestand");
+
+        //Toast.makeText(getApplicationContext(),
+                //extraFromAct1,
+               // Toast.LENGTH_LONG).show();
+
+        //set the name textview
+        mTreeStandName = (TextView)findViewById(R.id.textViewTreeStandName);
+
+        //set the type textview
+        mTreeStandType = (TextView)findViewById(R.id.textViewTreeStandType);
+
+        //set the notes textview
+        mTreeStandNotes = (TextView)findViewById(R.id.textViewTreeStandNotes);
+
+        //create ts handler
+        TSHandler tsHandler = new TSHandler(this, null, null, 1);
+
+        //get hunter name
+        //StringTokenizer tokens = new StringTokenizer(extraFromAct1, ",");
+        //String first = tokens.nextToken();// this will contain hunters name
+        //String second = tokens.nextToken();// this will contain hunters weapon
+
+        //check for treestand
+        TreeStand myTreeStand = tsHandler.findTreeStand(extraFromAct1);
+
+        if(myTreeStand != null){
+            //set name and weapon
+            mTreeStandName.setText(String.valueOf(myTreeStand.getTreeStandName()));
+            mTreeStandType.setText(String.valueOf(myTreeStand.getTreeStandType()));
+            mTreeStandNotes.setText(String.valueOf(myTreeStand.getTreeStandNotes()));
+
+        }
+        else
+            Toast.makeText(getApplicationContext(),
+                    "No Match Found",
+                    Toast.LENGTH_LONG).show();
+
+
+
     }
 
     // Nav button to go to home screen

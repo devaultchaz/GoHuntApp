@@ -51,6 +51,37 @@ public class TSHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public TreeStand findTreeStand(String treestandName){
+        //construct SQL string
+        String sql_query = "SELECT * FROM " + TABLE_TREESTANDS +
+                " WHERE " + COLUMN_TREESTANDNAME + " = \"" + treestandName +
+                "\"";
+
+        //open DB
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        //execute query
+        Cursor myCursor = db.rawQuery(sql_query, null);
+
+        //create empty hunter object
+        TreeStand myTreeStand = new TreeStand();
+
+        if(myCursor.moveToFirst()){
+            myTreeStand.setTreeStandID(myCursor.getInt(0));
+            myTreeStand.setTreeStandName(myCursor.getString(1));
+            myTreeStand.setTreeStandType(myCursor.getString(2));
+            myTreeStand.setTreeStandNotes(myCursor.getString(3));
+            myCursor.close();
+        }
+        else
+            myTreeStand = null;
+
+        //close DB
+        db.close();
+        return myTreeStand;
+    }
+
+
     public TreeStand [] displayTreestands(int number){
         //construct SQL string
         String sql_query = "SELECT * FROM " + TABLE_TREESTANDS;

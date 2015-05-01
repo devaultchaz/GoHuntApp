@@ -43,6 +43,8 @@ public class GoHuntScreen extends ActionBarActivity {
         //get hunters to display from dbhandler
         Hunter [] myHunters = dbHandler.displayHunters(20);
 
+
+
         //List<Array> wordList = Arrays.asList();
         //Collections.shuffle(wordList);
 
