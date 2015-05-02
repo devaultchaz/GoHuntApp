@@ -112,7 +112,7 @@ public class TreeStandScreen extends ActionBarActivity {
 
     //Nav button to go to map screen
     public void onMapClick(View view) {
-        Intent mapIntent = new Intent(this, MapScreen.class);
+        Intent mapIntent = new Intent(this, MapsActivity.class);
 
         startActivity(mapIntent);
     }

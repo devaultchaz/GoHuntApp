@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -110,13 +109,6 @@ public class MainActivity extends ActionBarActivity {
                                                           Intent intent = new Intent(MainActivity.this, TreeStandScreen.class);
                                                           intent.putExtra("treestand",((TextView) view).getText());
                                                           startActivity(intent);
-
-                                                          //the item clicked
-                                                          //String itemValue3 = (String) parent.getItemAtPosition(position);
-
-                                                          Toast.makeText(getApplicationContext(),
-                                                                  ((TextView) view).getText(),
-                                                                  Toast.LENGTH_LONG).show();
 
 
                                                       }
