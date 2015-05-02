@@ -125,6 +125,7 @@ public class MainActivity extends ActionBarActivity {
     public void onAddHClick(View view){
         Intent myAddHIntent = new Intent(this, Add_Hunter.class);
 
+       
         startActivity(myAddHIntent);
 
     }
