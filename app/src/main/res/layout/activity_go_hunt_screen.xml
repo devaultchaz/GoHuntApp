@@ -3,65 +3,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context="chaz.org.myapplication.GoHuntScreen"
-                android:background="@drawable/realtree">
+                android:background="#ff696969">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout12">
+        android:id="@+id/linearLayout12"
+        android:layout_toLeftOf="@+id/linearLayout15"
+        android:layout_toStartOf="@+id/linearLayout15"
+        >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:id="@+id/imageView5"
-            android:src="@drawable/grouppicture"
+            android:src="@drawable/gohuntlogo"
             android:layout_margin="3dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="200dp"
+        android:layout_width="120dp"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout12"
-        android:id="@+id/linearLayout13">
+        android:id="@+id/linearLayout13"
+        android:layout_below="@+id/linearLayout12">
 
         <Button
-            android:layout_width="fill_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Home"
             android:id="@+id/button8"
             android:onClick="onClick"
-            android:layout_margin="3dp"
-            />
+            android:layout_marginLeft="10dp"/>
 
         <Button
-            android:layout_width="fill_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Go Hunt"
             android:id="@+id/button9"
-            android:layout_margin="3dp"
-            />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"/>
 
         <Button
-            android:layout_width="fill_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Map"
             android:id="@+id/button10"
             android:onClick="onClickMap"
-            android:layout_margin="3dp"
-            />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="120dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/linearLayout12"
         android:layout_toEndOf="@+id/linearLayout12"
@@ -76,18 +78,9 @@
             android:text="Go Hunt"
             android:id="@+id/textView27"
             android:textSize="60dp"
-            android:textColor="#ffff9912"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="70dp"/>
-
-        <Button
-            android:layout_width="165dp"
-            android:layout_height="wrap_content"
-            android:text="History"
-            android:id="@+id/button"
-            android:layout_gravity="right"
-            android:layout_weight="0.50"
-            android:textSize="30dp"/>
+            android:textColor="#ffec773c"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"/>
 
     </LinearLayout>
 
@@ -95,12 +88,12 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/linearLayout13"
-        android:layout_alignLeft="@+id/linearLayout14"
-        android:layout_alignStart="@+id/linearLayout14"
         android:id="@+id/linearLayout15"
         android:layout_alignBottom="@+id/linearLayout13"
-        android:background="#ff444444">
+        android:background="#ff444444"
+        android:layout_toRightOf="@+id/linearLayout13"
+        android:layout_toEndOf="@+id/linearLayout13"
+        android:layout_below="@+id/linearLayout12">
 
         <LinearLayout
             android:orientation="vertical"
@@ -111,13 +104,16 @@
                 android:layout_width="200dp"
                 android:layout_height="300dp"
                 android:id="@+id/listViewGoHunters"
-                />
+                android:layout_marginLeft="5dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Go Hunt"
-                android:id="@+id/button2"/>
+                android:id="@+id/button2"
+                android:onClick="onGoHuntClick"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="5dp"/>
 
         </LinearLayout>
 

@@ -12,14 +12,23 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout"
-        >
+        android:layout_toLeftOf="@+id/linearLayout3"
+        android:layout_toStartOf="@+id/linearLayout3"
+        android:layout_alignBottom="@+id/linearLayout3">
 
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/imageView"
-            android:src="@drawable/grouppicture"
-            android:layout_margin="3dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/gohuntlogo"
+                android:layout_margin="3dp"/>
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -38,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Home"
             android:id="@+id/button5"
-            android:layout_margin="3dp"/>
+            android:layout_marginLeft="10dp"/>
 
         <Button
             android:layout_width="100dp"
@@ -46,7 +55,8 @@
             android:text="Go Hunt"
             android:id="@+id/button6"
             android:onClick="onGoClick"
-            android:layout_margin="3dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"/>
 
         <Button
             android:layout_width="100dp"
@@ -54,17 +64,18 @@
             android:text="Map"
             android:id="@+id/button7"
             android:onClick="onMapClick"
-            android:layout_margin="3dp"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"/>
     </LinearLayout>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:id="@+id/linearLayout3"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout">
+        android:layout_alignLeft="@+id/linearLayout26"
+        android:layout_alignStart="@+id/linearLayout26">
 
         <TextView
             android:layout_width="737dp"
@@ -73,10 +84,10 @@
             android:text="Go Hunt"
             android:id="@+id/textView"
             android:textSize="60dp"
-            android:paddingLeft="70dp"
-            android:textColor="#ffff9912"
-            android:paddingTop="60dp"
-            />
+            android:textColor="#ffec773c"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="50dp"
+            android:typeface="normal"/>
 
     </LinearLayout>
 
@@ -84,11 +95,12 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/linearLayout"
         android:layout_toEndOf="@+id/linearLayout2"
         android:weightSum="1"
         android:background="#ff444444"
-        android:layout_toRightOf="@+id/linearLayout2">
+        android:layout_toRightOf="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout3"
+        android:id="@+id/linearLayout26">
 
         <LinearLayout
             android:orientation="vertical"
@@ -101,7 +113,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Hunters"
                 android:id="@+id/textView31"
-                android:textColor="#ffff9912"/>
+                android:textColor="#ffec773c"
+                android:layout_marginLeft="40dp"/>
 
             <ListView
                 android:layout_width="150dp"
@@ -113,14 +126,15 @@
                 android:layout_marginRight="88dp"
                 android:layout_marginEnd="88dp"
                 android:clickable="true"
-                />
+                android:layout_marginLeft="5dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Add Hunter"
                 android:id="@+id/button14"
-                android:onClick="onAddHClick"/>
+                android:onClick="onAddHClick"
+                android:layout_marginLeft="20dp"/>
 
         </LinearLayout>
 
@@ -135,7 +149,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Tree Stands"
                 android:id="@+id/textView32"
-                android:textColor="#ffff9912"/>
+                android:textColor="#ffec773c"
+                android:layout_marginLeft="5dp"/>
 
             <ListView
                 android:layout_width="150dp"

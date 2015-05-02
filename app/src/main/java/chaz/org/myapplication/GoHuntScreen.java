@@ -75,10 +75,9 @@ public class GoHuntScreen extends ActionBarActivity {
     }
 
 
-    //performs go hunt feature
+    //performs go hunt feature. Just loads the page again
     public void onGoHuntClick(View view){
         Intent goHuntIntent = new Intent(this, GoHuntScreen.class);
-        //Collections.shuffle(myHunters);
         startActivity(goHuntIntent);
 
     }
@@ -95,7 +94,7 @@ public class GoHuntScreen extends ActionBarActivity {
 
     //Nav button to go to map screen
     public void onClickMap(View view){
-        Intent mapIntent = new Intent(this, MapScreen.class);
+        Intent mapIntent = new Intent(this, MapsActivity.class);
 
         startActivity(mapIntent);
     }
